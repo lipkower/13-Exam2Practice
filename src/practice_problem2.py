@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Emma Lipkowski.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -59,6 +59,12 @@ def run_test_practice_problem2a():
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
 
+    # Test 1
+    sequence = [5, 7, 9, 11, 13]
+    delta = 3
+    expected = [8, 10, 12, 14, 16]
+    actual = practice_problem2a([5, 7, 9, 11, 13], 3)
+    print_actual_result_of_test(expected, actual, test_results)
 
 def practice_problem2a(sequence, delta):
     """
