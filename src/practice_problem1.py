@@ -103,14 +103,19 @@ class Box(object):
         #    DIFFICULTY:      3
         #    TIME ESTIMATE:   5 minutes.
         # ---------------------------------------------------------------------
-        self.volume = volume
-        self.contents = contents
-        if len(contents) > volume:
-            self.contents = ''
-            self.volume = volume
-        elif len(contents) <= volume:
+        if len(contents)<= volume:
             self.contents = contents
             self.volume = volume
+            self.original_contents = contents
+            self.original_volume = volume
+
+        elif len(contents) > volume:
+            self.contents = ''
+            self.volume = volume
+            self.original_contents = ''
+            self.original_volume = volume
+        self.history = []
+
 
     def append_string(self, additional_contents):
         """
@@ -366,8 +371,8 @@ class Box(object):
         #    TIME ESTIMATE:   5 minutes.
         # ---------------------------------------------------------------------
         self.history = self.history + [self.contents]
-        self.contents = self.originalcontents
-        self.volume = self.originalvolume
+        self.contents = self.original_contents
+        self.volume = self.original_volume
 
     def steal(self, other_box):
         """
